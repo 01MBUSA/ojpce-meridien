@@ -1,0 +1,52 @@
+{
+  "items": [
+    {
+      "title": "La jeunesse au cœur du reboisement",
+      "category": "ENVIRONNEMENT",
+      "date": "",
+      "image": "/assets/actualite-environnement.jpg",
+      "excerpt": "Retour sur les actions de plantation d'arbres et de restauration des espaces dégradés.",
+      "body": "Retour sur les actions de plantation d'arbres et de restauration des espaces dégradés."
+    },
+    {
+      "title": "Pour des communautés plus propres",
+      "category": "COMMUNAUTÉ",
+      "date": "",
+      "image": "/assets/projet-dechets.jpg",
+      "excerpt": "Nos actions de sensibilisation et de nettoyage communautaire pour une meilleure gestion des déchets.",
+      "body": "Nos actions de sensibilisation et de nettoyage communautaire pour une meilleure gestion des déchets."
+    },
+    {
+      "title": "Former une nouvelle génération engagée",
+      "category": "ÉDUCATION",
+      "date": "",
+      "image": "/assets/actualite-formation.jpg",
+      "excerpt": "L'éducation environnementale comme levier pour renforcer les connaissances et l'engagement des jeunes.",
+      "body": "L'éducation environnementale comme levier pour renforcer les connaissances et l'engagement des jeunes."
+    },
+    {
+      "title": "Agir face aux changements climatiques",
+      "category": "CLIMAT",
+      "date": "",
+      "image": "/assets/hero-ojpce.jpg",
+      "excerpt": "Sensibiliser, mobiliser et promouvoir des solutions locales pour renforcer la résilience.",
+      "body": "Sensibiliser, mobiliser et promouvoir des solutions locales pour renforcer la résilience."
+    },
+    {
+      "title": "Ensemble pour plus d'impact",
+      "category": "PARTENARIAT",
+      "date": "",
+      "image": "",
+      "excerpt": "L'OJPCE/MERIDIEN ouvre des espaces de collaboration avec les institutions et organisations.",
+      "body": "L'OJPCE/MERIDIEN ouvre des espaces de collaboration avec les institutions et organisations."
+    },
+    {
+      "title": "Les jeunes et l'économie verte",
+      "category": "INNOVATION",
+      "date": "",
+      "image": "",
+      "excerpt": "Encourager les initiatives écologiques, l'innovation et les opportunités liées à l'économie verte.",
+      "body": "Encourager les initiatives écologiques, l'innovation et les opportunités liées à l'économie verte."
+    }
+  ]
+}

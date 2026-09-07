@@ -40,8 +40,8 @@
           <a href="#galerie">Galerie</a>
           <a href="#partenaires">Partenaires</a>
           <a href="#contact">Contact</a>
-          
         </div>
+        <a class="admin-login" href="/admin/" aria-label="Connexion administrateur" title="Connexion administrateur"><span aria-hidden="true">↪</span></a>
       </div>
     </nav>
   </header>
@@ -120,20 +120,7 @@
           <h2>Nos projets récents</h2>
           <div class="accent-line centered"></div>
         </div>
-        <div class="projects-grid">
-          <article class="project-card">
-            <div class="project-image photo" style="background-image:url('assets/projet-reboisement.jpg')" aria-label="Jeunes participant à une campagne de reboisement"></div>
-            <div class="project-body"><h3>Campagne de reboisement</h3><small>⌖ Rutshuru — Kiwanja</small><p>Plantation d'arbres pour restaurer les espaces dégradés et lutter contre l'érosion.</p><a href="projets.html">Voir nos projets →</a></div>
-          </article>
-          <article class="project-card">
-            <div class="project-image photo" style="background-image:url('assets/projet-dechets.jpg')" aria-label="Action communautaire de gestion des déchets"></div>
-            <div class="project-body"><h3>Propreté & gestion des déchets</h3><small>⌖ Beni</small><p>Sensibilisation et nettoyage communautaire pour une ville propre et saine.</p><a href="projets.html">Voir nos projets →</a></div>
-          </article>
-          <article class="project-card">
-            <div class="project-image photo" style="background-image:url('assets/projet-education.jpg')" aria-label="Formation en éducation environnementale"></div>
-            <div class="project-body"><h3>Éducation environnementale</h3><small>⌖ Nord-Kivu</small><p>Formations et sensibilisations dans les écoles sur la protection de l'environnement.</p><a href="projets.html">Voir nos projets →</a></div>
-          </article>
-        </div>
+        <div class="projects-grid" data-cms-projects="home"><p>Chargement des projets…</p></div>
         <div class="center"><a class="btn btn-green-outline" href="projets.html">Voir tous nos projets →</a></div>
       </div>
     </section>
@@ -141,20 +128,14 @@
     <section class="section light" id="actualites">
       <div class="container">
         <div class="section-heading"><p class="section-kicker">RESTEZ INFORMÉS</p><h2>Actualités</h2><div class="accent-line centered"></div></div>
-        <div class="news-grid">
-          <article><span class="date">ACTUALITÉ</span><h3>La jeunesse au cœur de l'action environnementale</h3><p>Découvrez nos activités, campagnes et initiatives menées avec les communautés.</p><a href="actualites.html">Voir l’actualité →</a></article>
-          <article><span class="date">ÉVÉNEMENT</span><h3>Mobilisation pour un environnement durable</h3><p>Retrouvez les prochaines activités et occasions de participation citoyenne.</p><a href="actualites.html">Voir l’actualité →</a></article>
-          <article><span class="date">PARTENARIAT</span><h3>Construire des collaborations pour agir</h3><p>L'OJPCE/MERIDIEN développe des partenariats pour renforcer son impact.</p><a href="actualites.html">Voir l’actualité →</a></article>
-        </div>
+        <div class="news-grid" data-cms-news><p>Chargement des actualités…</p></div>
       </div>
     </section>
 
     <section class="gallery-section" id="galerie">
       <div class="container">
         <div class="section-heading"><p class="section-kicker">NOS ACTIVITÉS</p><h2>Galerie</h2><div class="accent-line centered"></div></div>
-        <div class="gallery-grid">
-          <div class="photo-tile" style="background-image:url('assets/projet-reboisement.jpg')"><span>Reboisement</span></div><div class="photo-tile" style="background-image:url('assets/projet-dechets.jpg')"><span>Sensibilisation</span></div><div class="photo-tile" style="background-image:url('assets/projet-education.jpg')"><span>Gestion des déchets</span></div><div class="photo-tile" style="background-image:url('assets/hero-ojpce.jpg')"><span>Formation et jeunesse</span></div>
-        </div>
+        <div class="gallery-grid" data-cms-gallery="home"><p>Chargement de la galerie…</p></div>
       </div>
     </section>
 
@@ -183,6 +164,6 @@
     <div class="footer-bottom"><div class="container"><span>© 2026 OJPCE/MERIDIEN — Tous droits réservés.</span><span><a href="mentions-legales.html">Mentions légales</a> &nbsp; <a href="confidentialite.html">Politique de confidentialité</a></span></div></div>
   </footer>
 
-  <script src="js/script.js"></script>
+  <script src="js/script.js"></script><script src="js/cms-content.js"></script>
 </body>
 </html>

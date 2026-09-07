@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "title": "Reboisement",
+      "image": "/assets/projet-reboisement.jpg"
+    },
+    {
+      "title": "Sensibilisation communautaire",
+      "image": "/assets/projet-dechets.jpg"
+    },
+    {
+      "title": "Gestion des déchets",
+      "image": "/assets/projet-dechets.jpg"
+    },
+    {
+      "title": "Formation et éducation",
+      "image": "/assets/projet-education.jpg"
+    },
+    {
+      "title": "Partenariats et rencontres",
+      "image": "/assets/actualite-formation.jpg"
+    },
+    {
+      "title": "Protection de la biodiversité",
+      "image": "/assets/hero-ojpce.jpg"
+    }
+  ]
+}

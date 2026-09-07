@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "title": "Campagne de reboisement",
+      "location": "Rutshuru — Kiwanja",
+      "category": "Reboisement",
+      "image": "/assets/projet-reboisement.jpg",
+      "description": "Plantation d'arbres, restauration des espaces dégradés et sensibilisation des communautés à la protection des ressources naturelles.",
+      "body": "Plantation d'arbres, restauration des espaces dégradés et sensibilisation des communautés à la protection des ressources naturelles."
+    },
+    {
+      "title": "Propreté et gestion des déchets",
+      "location": "Beni",
+      "category": "Déchets",
+      "image": "/assets/projet-dechets.jpg",
+      "description": "Actions de nettoyage communautaire, sensibilisation au tri et promotion d'une gestion responsable des déchets.",
+      "body": "Actions de nettoyage communautaire, sensibilisation au tri et promotion d'une gestion responsable des déchets."
+    },
+    {
+      "title": "Éducation environnementale",
+      "location": "Nord-Kivu",
+      "category": "Éducation",
+      "image": "/assets/projet-education.jpg",
+      "description": "Sessions de formation et de sensibilisation destinées aux jeunes, aux écoles et aux communautés.",
+      "body": "Sessions de formation et de sensibilisation destinées aux jeunes, aux écoles et aux communautés."
+    },
+    {
+      "title": "Jeunesse, climat et biodiversité",
+      "location": "RDC",
+      "category": "Climat et biodiversité",
+      "image": "/assets/hero-ojpce.jpg",
+      "description": "Mobilisation de la jeunesse, recherche, plaidoyer et promotion d'initiatives locales face aux défis environnementaux.",
+      "body": "Mobilisation de la jeunesse, recherche, plaidoyer et promotion d'initiatives locales face aux défis environnementaux."
+    }
+  ]
+}

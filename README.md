@@ -14,4 +14,3 @@ Le formulaire de contact et la newsletter utilisent FormSubmit pour transmettre 
 
 ## Sécurité
 Les anciennes pages d'administration côté navigateur ont été retirées : un mot de passe ne doit jamais être stocké dans le JavaScript public d'un site statique. Pour une vraie administration, il faudra ultérieurement utiliser un CMS ou un backend sécurisé.
-Déploiement.

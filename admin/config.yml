@@ -1,0 +1,74 @@
+backend:
+  name: github
+  repo: 01MBUSA/ojpce-meridien
+  branch: main
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+locale: fr
+collections:
+  - name: actualites
+    label: "Actualités"
+    files:
+      - label: "Actualités du site"
+        name: actualites
+        file: content/actualites.json
+        fields:
+          - label: "Articles"
+            name: items
+            widget: list
+            summary: "{{fields.category}} — {{fields.title}}"
+            fields:
+              - {label: "Titre", name: title, widget: string}
+              - {label: "Catégorie", name: category, widget: string}
+              - {label: "Date", name: date, widget: datetime, format: "DD/MM/YYYY", required: false}
+              - {label: "Image", name: image, widget: image, required: false}
+              - {label: "Résumé", name: excerpt, widget: text}
+              - {label: "Contenu", name: body, widget: markdown, required: false}
+  - name: projets
+    label: "Projets"
+    files:
+      - label: "Projets du site"
+        name: projets
+        file: content/projets.json
+        fields:
+          - label: "Projets"
+            name: items
+            widget: list
+            summary: "{{fields.title}} — {{fields.location}}"
+            fields:
+              - {label: "Nom du projet", name: title, widget: string}
+              - {label: "Lieu", name: location, widget: string}
+              - {label: "Catégorie", name: category, widget: string}
+              - {label: "Image", name: image, widget: image, required: false}
+              - {label: "Description", name: description, widget: text}
+              - {label: "Contenu", name: body, widget: markdown, required: false}
+  - name: galerie
+    label: "Galerie"
+    files:
+      - label: "Galerie du site"
+        name: galerie
+        file: content/galerie.json
+        fields:
+          - label: "Photos"
+            name: items
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - {label: "Titre / légende", name: title, widget: string}
+              - {label: "Photo", name: image, widget: image}
+  - name: partenaires
+    label: "Partenaires"
+    files:
+      - label: "Partenaires du site"
+        name: partenaires
+        file: content/partenaires.json
+        fields:
+          - label: "Partenaires"
+            name: items
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - {label: "Nom", name: name, widget: string}
+              - {label: "Logo", name: logo, widget: image, required: false}
+              - {label: "Lien", name: url, widget: string, required: false}
+              - {label: "Description", name: description, widget: text, required: false}
