@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Documents PDF - OJPCE Méridien</title>
+
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>Documents PDF</h1>
+    <p>Consultez et téléchargez nos documents.</p>
+  </header>
+
+  <main>
+    <section id="documents">
+      <p>Chargement des documents...</p>
+    </section>
+  </main>
+
+  <script>
+    fetch("content/documents.json")
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById("documents");
+
+        if (!data.items || data.items.length === 0) {
+          container.innerHTML = "<p>Aucun document disponible pour le moment.</p>";
+          return;
+        }
+
+        container.innerHTML = "";
+
+        data.items.forEach(document => {
+          const bloc = document.createElement("article");
+
+          bloc.innerHTML = `
+            <h2>${document.title}</h2>
+            <p>${document.description || ""}</p>
+            <a href="${document.file}" target="_blank" rel="noopener">
+              Consulter le PDF
+            </a>
+          `;
+
+          container.appendChild(bloc);
+        });
+      })
+      .catch(error => {
+        document.getElementById("documents").innerHTML =
+          "<p>Impossible de charger les documents.</p>";
+        console.error(error);
+      });
+  </script>
+
+</body>
+</html>
