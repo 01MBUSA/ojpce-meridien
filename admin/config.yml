@@ -73,3 +73,18 @@ collections:
               - {label: "Logo", name: logo, widget: image, required: false}
               - {label: "Lien", name: url, widget: string, required: false}
               - {label: "Description", name: description, widget: text, required: false}
+  - name: documents
+    label: "Documents PDF"
+    files:
+      - label: "Documents PDF du site"
+        name: documents
+        file: content/documents.json
+        fields:
+          - label: "Documents"
+            name: items
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - {label: "Titre du document", name: title, widget: string}
+              - {label: "Description", name: description, widget: text, required: false}
+              - {label: "Fichier PDF", name: file, widget: file}
