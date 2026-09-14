@@ -3,6 +3,8 @@ backend:
   repo: 01MBUSA/ojpce-meridien
   branch: main
   site_domain: "ojpce-meridien-admin.netlify.app"
+  site_url: "https://ojpce-meridien.org"
+  display_url: "https://ojpce-meridien.org"
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 locale: fr

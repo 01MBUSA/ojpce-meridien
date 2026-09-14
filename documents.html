@@ -3,58 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Documents PDF - OJPCE Méridien</title>
-
-  <link rel="stylesheet" href="CSS/style.css">
+  <title>Documents PDF | OJPCE/MERIDIEN</title>
+  <meta name="description" content="Consultez et téléchargez les documents PDF officiels de l'OJPCE/MERIDIEN.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .documents-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .document-card{background:#fff;border:1px solid #e1e8e1;border-radius:10px;padding:25px;box-shadow:0 5px 18px #00000008}
+    .document-icon{font-size:38px;margin-bottom:12px}
+    .document-card h2{font:700 17px Montserrat;color:#164f27;margin:0 0 8px}
+    .document-card p{font-size:13px;color:#58635c;min-height:42px}
+    .document-card a{display:inline-block;margin-top:8px;color:#217c36;font:700 12px Montserrat}
+    .documents-empty{text-align:center;background:#f2f8f1;border-radius:10px;padding:35px;color:#58635c}
+    @media(max-width:850px){.documents-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:600px){.documents-grid{grid-template-columns:1fr}}
+  </style>
 </head>
-
 <body>
-
-  <header>
-    <h1>Documents PDF</h1>
-    <p>Consultez et téléchargez nos documents.</p>
-  </header>
-
-  <main>
-    <section id="documents">
-      <p>Chargement des documents...</p>
-    </section>
-  </main>
-
-  <script>
-    fetch("content/documents.json")
-      .then(response => response.json())
-      .then(data => {
-        const container = document.getElementById("documents");
-
-        if (!data.items || data.items.length === 0) {
-          container.innerHTML = "<p>Aucun document disponible pour le moment.</p>";
-          return;
-        }
-
-        container.innerHTML = "";
-
-        data.items.forEach(document => {
-          const bloc = document.createElement("article");
-
-          bloc.innerHTML = `
-            <h2>${document.title}</h2>
-            <p>${document.description || ""}</p>
-            <a href="${document.file}" target="_blank" rel="noopener">
-              Consulter le PDF
-            </a>
-          `;
-
-          container.appendChild(bloc);
-        });
-      })
-      .catch(error => {
-        document.getElementById("documents").innerHTML =
-          "<p>Impossible de charger les documents.</p>";
-        console.error(error);
-      });
-  </script>
-
-</body>
-</html>
+<header><div class="topbar"><div class="container topbar-inner">
+<span>✉ ojpcemeridien@gmail.com</span><span>☎ +243 975900608, +243 835951982</span><span>⌖ Beni, Nord-Kivu, RDC</span>
+</div></div>
+<nav class="navbar"><div class="container nav-inner">
+<a class="brand" href="index.html"><div class="brand-mark"><img src="assets/logo-ojpce.png" alt="Logo OJPCE/MERIDIEN"></div><div><strong>OJPCE/MERIDIEN</strong><small>Organisation des Jeunes pour le Progrès<br>de la Culture Environnementale</small></div></a>
+<button class="menu-toggle" aria-label="Ouvrir le menu">☰</button>
+<div class="nav-links"><a href="index.html">Accueil</a><a href="a-propos.html">À propos</a><a href="projets.html">Nos projets</a><a href="actualites.html">Actualités</a><a href="galerie.html">Galerie</a><a href="partenaires.html">Partenaires</a><a class="active" href="documents.html">Documents PDF</a><a href="contact.html">Contact</a></div>
+<a class="admin-login" href="https://ojpce-meridien-admin.netlify.app/admin/" aria-label="Connexion administrateur" title="Connexion administrateur"><span aria-hidden="true">↪</span></a>
+</div></nav></header>
+<main>
+<section class="page-hero"><div class="container"><p class="section-kicker">RESSOURCES</p><h1>Documents PDF</h1><p>Consultez et téléchargez nos documents officiels.</p></div></section>
+<section class="content-section"><div class="container"><div id="documents" class="documents-grid"><p>Chargement des documents…</p></div></div></section>
+</main>
+<footer><div class="footer-main container">
+<div><h3>OJPCE/MERIDIEN</h3><p>Organisation des Jeunes pour le Progrès de la Culture Environnementale</p><p class="tagline">La jeunesse au service de l'environnement et du développement durable.</p></div>
+<div><h4>Liens rapides</h4><a href="index.html">Accueil</a><a href="a-propos.html">À propos</a><a href="projets.html">Nos projets</a><a href="actualites.html">Actualités</a><a href="galerie.html">Galerie</a><a href="partenaires.html">Partenaires</a><a href="documents.html">Documents PDF</a></div>
+<div><h4>Informations</h4><p>Siège actuellement délocalisé :<br>Beni, Nord-Kivu, RDC</p><p>Email : ojpcemeridien@gmail.com<br>Tél. : +243 975900608, +243 835951982</p></div>
+<div><h4>Newsletter</h4><p>Abonnez-vous pour recevoir nos actualités.</p><form class="newsletter"><input type="email" placeholder="Votre adresse e-mail" aria-label="Votre adresse e-mail"><button type="submit">→</button></form></div>
+</div><div class="footer-bottom"><div class="container"><span>© 2026 OJPCE/MERIDIEN — Tous droits réservés.</span><span><a href="mentions-legales.html">Mentions légales</a> &nbsp; <a href="confidentialite.html">Politique de confidentialité</a></span></div></div></footer>
+<script src="js/script.js"></script>
+<script>
+(async function(){
+  const container=document.getElementById('documents');
+  const esc=v=>String(v??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  try{
+    const response=await fetch('content/documents.json?v='+Date.now());
+    if(!response.ok) throw new Error('documents.json');
+    const data=await response.json();
+    const items=Array.isArray(data.items)?data.items:[];
+    if(!items.length){container.className='documents-empty';container.innerHTML='<strong>Aucun document disponible pour le moment.</strong><p>Les documents publiés depuis l’espace d’administration apparaîtront ici.</p>';return;}
+    container.className='documents-grid';
+    container.innerHTML=items.map(item=>`<article class="document-card"><div class="document-icon" aria-hidden="true">📄</div><h2>${esc(item.title)}</h2>${item.description?`<p>${esc(item.description)}</p>`:''}<a href="${esc(item.file)}" target="_blank" rel="noopener">Consulter le PDF →</a></article>`).join('');
+  }catch(error){console.error(error);container.className='documents-empty';container.innerHTML='<strong>Impossible de charger les documents.</strong><p>Veuillez réessayer plus tard.</p>';}
+})();
+</script>
+</body></html>
