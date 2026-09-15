@@ -2,7 +2,9 @@ backend:
   name: github
   repo: 01MBUSA/ojpce-meridien
   branch: main
-  site_domain: "ojpce-meridien-admin.netlify.app"
+  base_url: "https://decap-proxy.ojpcemeridien.workers.dev"
+  auth_endpoint: "/auth"
+  site_domain: "ojpce-meridien.org"
   site_url: "https://ojpce-meridien.org"
   display_url: "https://ojpce-meridien.org"
 media_folder: "assets/uploads"
