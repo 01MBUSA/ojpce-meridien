@@ -13,4 +13,4 @@ Version préparée pour GitHub Pages et le domaine `ojpce-meridien.org`.
 Le formulaire de contact et la newsletter utilisent FormSubmit pour transmettre les demandes à `ojpcemeridien@gmail.com`. La première utilisation peut nécessiter une confirmation du service.
 
 ## Sécurité
-Les anciennes pages d'administration côté navigateur ont été retirées : un mot de passe ne doit jamais être stocké dans le JavaScript public d'un site statique. Pour une vraie administration, il faudra ultérieurement utiliser un CMS ou un backend sécurisé.
+L’administration du site utilise Decap CMS dans `/admin/`. Le bouton d’administration est volontairement masqué du site public. L’authentification sera assurée par GitHub via un proxy OAuth Cloudflare, sans dépendre de Netlify pour l’hébergement du site.
