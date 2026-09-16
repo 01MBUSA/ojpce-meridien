@@ -188,6 +188,6 @@
   }
 
   document.addEventListener("DOMContentLoaded", () => {
-    news(); projects(); gallery(); partners();
+    news(); projets(); gallery(); partners();
   });
 })();
