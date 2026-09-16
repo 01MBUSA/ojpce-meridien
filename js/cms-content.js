@@ -54,10 +54,7 @@
       area.innerHTML = (data.items || [])
         .slice(0, home ? 3 : 999)
         .map(item => {
-          const images = [
-            item.image,
-           ...(item.images || []).map(photo => photo)
-          ].filter(Boolean).map(asset);
+          const images = (item.images || []).filter(Boolean).map(asset);
 
           const photos = images.map((image, index) => `
             <button
