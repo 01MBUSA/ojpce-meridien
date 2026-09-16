@@ -27,6 +27,14 @@ collections:
               - {label: "Catégorie", name: category, widget: string}
               - {label: "Date", name: date, widget: datetime, format: "DD/MM/YYYY", required: false}
               - {label: "Image", name: image, widget: image, required: false}
+              - label: "Photos supplémentaires du projet"
+                 name: images
+                 widget: list
+                required: false
+                field:
+                label: "Photo"
+                name: image
+                widget: image
               - {label: "Résumé", name: excerpt, widget: text}
               - {label: "Contenu", name: body, widget: markdown, required: false}
   - name: projets
