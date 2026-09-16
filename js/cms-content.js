@@ -56,7 +56,7 @@
         .map(item => {
           const images = [
             item.image,
-            ...(item.images || []).map(photo => photo)
+           ...(item.images || []).map(photo => photo && photo.image)
           ].filter(Boolean).map(asset);
 
           const photos = images.map((image, index) => `
