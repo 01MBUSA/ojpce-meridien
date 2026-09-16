@@ -9,7 +9,7 @@
 .project-project-gallery{
   display:grid;
   grid-template-columns:repeat(2,1fr)
-  gap:8px;
+  gap:20px;
   padding:8px;
 }
 
