@@ -42,7 +42,7 @@
   }
 
   async function projets() {
-  const areas = document.querySelectorAll("[data-cms-projets]");
+  const areas = document.querySelectorAll("[data-cms-projects]");
   if (!areas.length) return;
 
   try {
