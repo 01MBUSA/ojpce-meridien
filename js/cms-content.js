@@ -41,31 +41,62 @@
     } catch (error) { console.warn(error); }
   }
 
-  async function projects() {
-    const areas = document.querySelectorAll("[data-cms-projects]");
-    if (!areas.length) return;
-    try {
-      const data = await load("content/projets.json");
-      areas.forEach(area => {
-        const home = area.getAttribute("data-cms-projects") === "home";
-        area.innerHTML = (data.items || []).slice(0, home ? 3 : 999).map(item =>
-          home
+  async function projets() {
+  const areas = document.querySelectorAll("[data-cms-projets]");
+  if (!areas.length) return;
+
+  try {
+    const data = await load("content/projets.json");
+
+    areas.forEach(area => {
+      const home = area.getAttribute("data-cms-projets") === "home";
+
+      area.innerHTML = (data.items || [])
+        .slice(0, home ? 3 : 999)
+        .map(item => {
+          const images = [
+            item.image,
+            ...(item.images || []).map(photo => photo && photo.image)
+          ].filter(Boolean).map(asset);
+
+          const photos = images.map((image, index) => `
+            <button
+              type="button"
+              class="cms-project-photo"
+              data-images="${esc(JSON.stringify(images))}"
+              data-index="${index}"
+              aria-label="Agrandir la photo"
+              style="background-image:url('${esc(image)}')">
+            </button>
+          `).join("");
+
+          return home
             ? `<article class="project-card">
-                <div class="project-image photo" style="background-image:url('${esc(asset(item.image))}')"></div>
-                <div class="project-body"><h3>${esc(item.title)}</h3>
-                <small>⌖ ${esc(item.location)}</small><p>${esc(item.description)}</p>
-                <a href="projets.html">Voir nos projets →</a></div>
+                <div class="project-project-gallery">${photos}</div>
+                <div class="project-body">
+                  <h3>${esc(item.title)}</h3>
+                  <small>${esc(item.location)}</small>
+                  <p>${esc(item.description)}</p>
+                  <a href="projets.html">Voir nos projets →</a>
+                </div>
               </article>`
             : `<article class="project-large">
-                <div class="project-banner" style="background:url('${esc(asset(item.image))}') center/cover"></div>
-                <div class="project-text"><span class="meta">${esc(item.location)} · ${esc(item.category)}</span>
-                <h3>${esc(item.title)}</h3><p>${esc(item.description)}</p>
-                <a class="text-btn" href="contact.html">Participer au projet →</a></div>
-              </article>`
-        ).join("");
-      });
-    } catch (error) { console.warn(error); }
+                <div class="project-project-gallery">${photos}</div>
+                <div class="project-text">
+                  <span class="meta">${esc(item.location)} · ${esc(item.category)}</span>
+                  <h3>${esc(item.title)}</h3>
+                  <p>${esc(item.description)}</p>
+                  <a class="text-btn" href="contact.html">Participer au projet →</a>
+                </div>
+              </article>`;
+        })
+        .join("");
+    });
+
+  } catch (error) {
+    console.warn(error);
   }
+}
 
   async function gallery() {
     const areas = document.querySelectorAll("[data-cms-gallery]");
@@ -115,13 +146,26 @@
         modal.querySelector(".cms-gallery-close").addEventListener("click", close);
         document.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
         document.addEventListener("click", e => {
-          const photo = e.target.closest(".cms-gallery-photo");
-          if (!photo) return;
-          modal.querySelector(".cms-gallery-large").src = photo.dataset.image;
-          modal.querySelector(".cms-gallery-large").alt = photo.dataset.title || "Photo";
-          modal.querySelector(".cms-gallery-caption").textContent = photo.dataset.title || "";
-          modal.classList.add("open");
-        });
+  const photo = e.target.closest(".cms-gallery-photo, .cms-project-photo");
+  if (!photo) return;
+
+  if (photo.classList.contains("cms-project-photo")) {
+    const images = JSON.parse(photo.dataset.images || "[]");
+    const index = Number(photo.dataset.index || 0);
+
+    if (!images.length) return;
+
+    modal.querySelector(".cms-gallery-large").src = images[index];
+    modal.querySelector(".cms-gallery-large").alt = "Photo du projet";
+    modal.querySelector(".cms-gallery-caption").textContent = "Photo du projet";
+  } else {
+    modal.querySelector(".cms-gallery-large").src = photo.dataset.image;
+    modal.querySelector(".cms-gallery-large").alt = photo.dataset.title || "Photo";
+    modal.querySelector(".cms-gallery-caption").textContent = photo.dataset.title || "";
+  }
+
+  modal.classList.add("open");
+});
       }
     } catch (error) { console.warn(error); }
   }
