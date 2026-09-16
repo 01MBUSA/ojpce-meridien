@@ -6,15 +6,11 @@
       "category": "Reboisement",
       "image": "/assets/uploads/gate16-sept.-2026-01_51_32.jpg",
       "description": "Plantation d'arbres, restauration des espaces dégradés et sensibilisation des communautés à la protection des ressources naturelles à BENI.",
-      "body": "Plantation d'arbres, restauration des espaces dégradés et sensibilisation des communautés à la protection des ressources naturelles."
-    },
-    {
-      "title": "Éducation environnementale",
-      "location": "Nord-Kivu",
-      "category": "Éducation",
-      "image": "",
-      "description": "Sessions de formation et de sensibilisation destinées aux jeunes, aux écoles et aux communautés.",
-      "body": "Sessions de formation et de sensibilisation destinées aux jeunes, aux écoles et aux communautés."
+      "body": "Plantation d'arbres, restauration des espaces dégradés et sensibilisation des communautés à la protection des ressources naturelles.",
+      "images": [
+        "/assets/uploads/hero-presentation.jpg",
+        "/assets/uploads/img_20260730_133635_386.jpg"
+      ]
     }
   ]
 }
