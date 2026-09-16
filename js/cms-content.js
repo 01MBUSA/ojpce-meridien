@@ -42,14 +42,14 @@
   }
 
   async function projets() {
-  const areas = document.querySelectorAll("[data-cms-projects]");
+  const areas = document.querySelectorAll("[data-cms-projects]")
   if (!areas.length) return;
 
   try {
     const data = await load("content/projets.json");
 
     areas.forEach(area => {
-      const home = area.getAttribute("data-cms-projets") === "home";
+      const home = area.getAttribute("data-cms-projects") === "home";
 
       area.innerHTML = (data.items || [])
         .slice(0, home ? 3 : 999)
