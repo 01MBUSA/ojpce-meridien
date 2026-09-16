@@ -69,7 +69,7 @@
 
           return home
             ? `<article class="project-card">
-                <div class="project-project-gallery">${photos}</div>
+                <div class="project-project-gallery" style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px">${photos}</div>
                 <div class="project-body">
                   <h3>${esc(item.title)}</h3>
                   <small>${esc(item.location)}</small>
@@ -78,7 +78,7 @@
                 </div>
               </article>`
             : `<article class="project-large">
-                <div class="project-project-gallery">${photos}</div>
+                <div class="project-project-gallery" style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px">${photos}</div>
                 <div class="project-text">
                   <span class="meta">${esc(item.location)} · ${esc(item.category)}</span>
                   <h3>${esc(item.title)}</h3>
