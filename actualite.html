@@ -13,7 +13,7 @@
 .article-back{display:inline-block;margin-top:25px}
 .article-error{text-align:center;padding:60px 20px}
 </style>
-</head>
+<style>.article-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:24px 0}.article-gallery img{width:100%;height:240px;object-fit:cover;border-radius:10px;display:block}@media(max-width:700px){.article-gallery{grid-template-columns:1fr 1fr}.article-gallery img{height:180px}}@media(max-width:480px){.article-gallery{grid-template-columns:1fr}}</style></head>
 <body>
 <header><div class="container">
 <a href="index.html" class="logo">OJPCE/MERIDIEN</a>
@@ -21,14 +21,16 @@
 </div></header>
 <main class="article-page" id="article"><p>Chargement de l’actualité…</p></main>
 <script>
-const esc=value=>String(value??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const asset=value=>{if(!value)return"";if(/^https?:\/\//i.test(value))return value;return value.startsWith("/")?value:"/"+value};
+const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const asset=value=>{const raw=String(value??"").trim();if(!raw)return"";if(/^(https?:|data:|blob:)/i.test(raw))return raw;return encodeURI(raw.startsWith("/")?raw:"/"+raw)};
 const article=document.getElementById("article");
 const id=Number(new URLSearchParams(location.search).get("id"));
-fetch("content/actualites.json?v="+Date.now()).then(r=>{if(!r.ok)throw Error("load");return r.json()}).then(data=>{
-const item=(data.items||[])[id];
+fetch("content/actualites.json?v="+Date.now(),{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("load");return r.json()}).then(data=>{
+const item=(Array.isArray(data.items)?data.items:[])[id];
 if(!item){article.innerHTML='<div class="article-error"><h1>Actualité introuvable</h1><a class="article-back" href="actualites.html">← Retour aux actualités</a></div>';return;}
-article.innerHTML=`<span class="article-meta">${esc(item.category)}</span><h1>${esc(item.title)}</h1>${item.date?`<p><strong>${esc(item.date)}</strong></p>`:""}${item.image?`<div class="article-image" style="background-image:url('${esc(asset(item.image))}')"></div>`:""}${item.excerpt?`<p><strong>${esc(item.excerpt)}</strong></p>`:""}<div class="article-content">${esc(item.body||item.excerpt||"").replace(/\n/g,"<br>")}</div><a class="article-back" href="actualites.html">← Retour aux actualités</a>`;
+const photos=[item.image,...(Array.isArray(item.images)?item.images:[])].filter(Boolean).map(asset).filter((v,i,a)=>a.indexOf(v)===i);
+const body=String(item.body||item.excerpt||"").replace(/\n/g,"<br>");
+article.innerHTML=`<span class="article-meta">${esc(item.category)}</span><h1>${esc(item.title)}</h1>${item.date?`<p><strong>${esc(item.date)}</strong></p>`:""}${photos.length?`<div class="article-gallery">${photos.map((p,i)=>`<img src="${esc(p)}" alt="${esc(item.title)} — photo ${i+1}" loading="lazy">`).join("")}</div>`:""}${item.excerpt?`<p><strong>${esc(item.excerpt)}</strong></p>`:""}<div class="article-content">${body}</div><a class="article-back" href="actualites.html">← Retour aux actualités</a>`;
 }).catch(()=>{article.innerHTML='<div class="article-error"><h1>Erreur de chargement</h1><p>Veuillez réessayer plus tard.</p><a class="article-back" href="actualites.html">← Retour aux actualités</a></div>';});
 </script>
 </body>

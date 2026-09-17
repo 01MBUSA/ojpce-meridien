@@ -10,6 +10,8 @@ backend:
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 locale: fr
+media_library:
+  name: default
 collections:
   - name: actualites
     label: "Actualités"
@@ -27,7 +29,7 @@ collections:
               - {label: "Catégorie", name: category, widget: string}
               - {label: "Date", name: date, widget: datetime, format: "DD/MM/YYYY", required: false}
               - {label: "Image", name: image, widget: image, required: false}
-              - {label: "Photos supplémentaires du projet", name: images, widget: list, required: false, field: {label: "Photo", name: image, widget: image}}
+              - {label: "Photos supplémentaires", name: images, widget: list, required: false, field: {label: "Photo", name: image, widget: image}}
               - {label: "Résumé", name: excerpt, widget: text}
               - {label: "Contenu", name: body, widget: markdown, required: false}
   - name: projets
@@ -46,7 +48,7 @@ collections:
               - {label: "Lieu", name: location, widget: string}
               - {label: "Catégorie", name: category, widget: string}
               - {label: "Image", name: image, widget: image, required: false}
-              - {label: "Photos supplémentaires du projet", name: images, widget: list, required: false, field: {label: "Photo", name: image, widget: image}}
+              - {label: "Photos supplémentaires", name: images, widget: list, required: false, field: {label: "Photo", name: image, widget: image}}
               - {label: "Description", name: description, widget: text}
               - {label: "Contenu", name: body, widget: markdown, required: false}
   - name: galerie
