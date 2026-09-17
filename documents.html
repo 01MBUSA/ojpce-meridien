@@ -45,16 +45,16 @@
 <script>
 (async function(){
   const container=document.getElementById('documents');
-  const esc=v=>String(v??'').replace(/[&<>"\']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const asset=v=>{const raw=String(v??'').trim();if(!raw)return '';if(/^(https?:|data:|blob:)/i.test(raw))return raw;return encodeURI(raw.startsWith('/')?raw:'/'+raw)};
+  const esc=v=>String(v??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const asset=v=>{if(!v)return '';v=String(v).trim();if(/^(https?:)?\/\//i.test(v))return v;return '/'+v.replace(/^\.\//,'').replace(/^\/+/, '');};
   try{
-    const response=await fetch('content/documents.json?v='+Date.now(),{cache:'no-store'});
+    const response=await fetch('content/documents.json?v='+Date.now());
     if(!response.ok) throw new Error('documents.json');
     const data=await response.json();
     const items=Array.isArray(data.items)?data.items:[];
     if(!items.length){container.className='documents-empty';container.innerHTML='<strong>Aucun document disponible pour le moment.</strong><p>Les documents publiés depuis l’espace d’administration apparaîtront ici.</p>';return;}
     container.className='documents-grid';
-    container.innerHTML=items.map(item=>{const file=asset(item.file);return `<article class="document-card"><div class="document-icon" aria-hidden="true">📄</div><h2>${esc(item.title)}</h2>${item.description?`<p>${esc(item.description)}</p>`:''}${file?`<a href="${esc(file)}" target="_blank" rel="noopener noreferrer">Consulter le PDF →</a>`:'<p>Fichier non disponible.</p>'}</article>`}).join('');
+    container.innerHTML=items.map(item=>`<article class="document-card"><div class="document-icon" aria-hidden="true">📄</div><h2>${esc(item.title)}</h2>${item.description?`<p>${esc(item.description)}</p>`:''}<a href="${esc(asset(item.file))}" target="_blank" rel="noopener">Consulter le PDF →</a></article>`).join('');
   }catch(error){console.error(error);container.className='documents-empty';container.innerHTML='<strong>Impossible de charger les documents.</strong><p>Veuillez réessayer plus tard.</p>';}
 })();
 </script>
