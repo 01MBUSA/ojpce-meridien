@@ -46,10 +46,13 @@
     {
       "title": "Les jeunes et l'économie verte",
       "category": "INNOVATION",
-      "date": "09/09/2026",
-      "image": "",
-      "excerpt": "Encourager les initiatives écologiques, l'innovation et les opportunités liées à l'économie verte.",
-      "body": "Encourager les initiatives écologiques, l'innovation et les opportunités liées à l'économie verte."
+      "date": "17/09/2026",
+      "image": "/assets/uploads/vert-bb.png",
+      "excerpt": "Encourager les initiatives piscicoles, l'innovation et les opportunités liées à l'économie verte.",
+      "body": "Economie en pisciculture pour une sécurité alimentaire.",
+      "images": [
+        "/assets/uploads/vertddd.png"
+      ]
     }
   ]
 }
