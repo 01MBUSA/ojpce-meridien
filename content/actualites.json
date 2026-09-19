@@ -20,9 +20,12 @@
       "title": "Former une nouvelle génération engagée",
       "category": "ÉDUCATION",
       "date": "18/08/2026",
-      "image": "/assets/uploads/dscn1286.jpg",
+      "image": "/assets/uploads/jikaze-ok.jpg",
       "excerpt": "L'éducation environnementale comme levier pour renforcer les connaissances et l'engagement des jeunes.",
-      "body": "L'éducation environnementale comme levier pour renforcer les connaissances et l'engagement des jeunes."
+      "body": "L'éducation environnementale comme levier pour renforcer les connaissances et l'engagement des jeunes.",
+      "images": [
+        "/assets/uploads/jikz.jpg"
+      ]
     },
     {
       "title": "Agir face aux changements climatiques",
